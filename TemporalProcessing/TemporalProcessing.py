@@ -20,27 +20,32 @@ for i in range(int(number)):
 
 #Creating a canvas that is the same size as my images
 canvas = Image.new("RGB", (image[0].width,image[0].height), "white")
-r_sum = 0;
-g_sum = 0;
-b_sum = 0;
+r_sum = [];
+g_sum = [];
+b_sum = [];
 
+#median value
+med = int(number)/2
 
 for i in range(canvas.height):
     for j in range(canvas.width):
         for k in range(int(number)):
             num=image[k].getpixel((j,i))
-            r_sum = r_sum + num[0]
-            g_sum = g_sum + num[1]
-            b_sum = b_sum + num[2]
+            r_sum.append(num[0])
+            g_sum.append(num[1])
+            b_sum.append(num[2])
+            r_sum.sort()
+            g_sum.sort()
+            b_sum.sort()
         color = (
-            int( (r_sum)/int(number)),
-            int( (g_sum)/int(number)),
-            int( (b_sum)/int(number))
+            r_sum[int(med)],
+            g_sum[int(med)],
+            b_sum[int(med)]
             )
         #reset colors
-        r_sum = 0;
-        g_sum = 0;
-        b_sum = 0;
+        r_sum = [];
+        g_sum = [];
+        b_sum = [];
         canvas.putpixel((j,i), color)
 #Saving the image I have created
 canvas.save("images/done.png")
