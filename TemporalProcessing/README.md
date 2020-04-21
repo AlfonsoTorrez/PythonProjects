@@ -7,8 +7,3 @@ During the creation of the application I learned how to use the following techno
 + Python
 + Python Image Library
 
-### Example: 
-![Random](http://i65.tinypic.com/4sh6bp.png)
-
-+ The picture above shows a small example on how the application would work. Three pictures have been taken, but a fox riding a motorcycle was caught in all my pictures. If I combine these pictures and obtain the median pixels of every pixel, I should be able to get one master picture that has removed the fox. 
-
